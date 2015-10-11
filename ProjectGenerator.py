@@ -1,11 +1,12 @@
 import os;
 import sys;
 from FileGenerator import FileGenerator;
+from ScriptMonitor import ScriptMonitor;
 
 class ProjectGenerator:
     
     def __init__ (self):
-        print("OUT> Generating a project....");
+        ScriptMonitor.message("Generating a project....");
         
     def createProject(self, dir, projectName, groupId):
         projectDir = dir+"/"+projectName;
@@ -30,11 +31,14 @@ class ProjectGenerator:
     
             packageFolderPathSrc = ProjectGenerator.createPackageFolder(self, projectDir, SOURCE_MAIN_JAVA, groupId);
             packageFolderPathTest = ProjectGenerator.createPackageFolder(self, projectDir, SOURCE_TEST_JAVA, groupId);
+            
+            ScriptMonitor.message("Creating source folder path: "+packageFolderPathSrc);
+            ScriptMonitor.message("Creating test folder path: "+packageFolderPathTest);
                 
             #create the MainApplication.java file
             
             FileGenerator.createSourceEntryFile(packageFolderPathSrc, groupId)
-            FileGenerator.createLogPropertiesFile(groupId, projectDir+"/"+SOURCE_MAIN_JAVA+"/log4j.properties");
+            FileGenerator.createLogPropertiesFile(groupId, projectDir+"/"+SOURCE_MAIN_RESOURCES+"/log4j.properties");
     
     
         else:

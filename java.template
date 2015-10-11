@@ -1,10 +1,14 @@
 package {package.name}
 
+import org.apache.log4j.Logger;
+
 public class MainApplication {
+
+	private static final Logger logger = Logger.getLogger(MainApplication.class);
 
 	public static void main(String[] args) {
 	
-		System.out.println("Main method");
+		logger.info("Main Method");
 		
 	}
 	
