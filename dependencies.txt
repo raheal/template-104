@@ -1,4 +1,3 @@
 artifact,groupid,version
-spring-framework,org.springframework.core,4.11,
-mockito,org.mockito,5.0,
-junit,org.junit,4.11,
+junit,junit,4.12
+log4j,log4j,1.2.17
