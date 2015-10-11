@@ -7,14 +7,14 @@ class FileGenerator():
     @staticmethod
     def createLogPropertiesFile(groupId, filepath):
         ScriptMonitor.message("Creating the log4j file: log4j.properties");
-        content = FileController.readFile("log.template");
+        content = FileController.readFile("templates/log.template");
         updatedContent = content.replace("{group.id}", groupId);
         FileController.writeToFile(updatedContent, filepath);
     
     @staticmethod
     def createSourceEntryFile(dir, groupId):
         ScriptMonitor.message("Creating sample java class: MainApplication.java");
-        content = FileController.readFile("java.template");
+        content = FileController.readFile("templates/java.template");
         res = content.replace("{package.name}", groupId+".app;")
         FileController.writeToFile(res, dir+"/MainApplication.java");
         
@@ -28,7 +28,7 @@ class FileGenerator():
                 "{list-dependencies}" : FileGenerator.readDependencyFile(),
                 "{application.entrypoint}" : groupId+".app.MainApplication"};
     
-        pomcontent = FileController.readFile("pom.template");
+        pomcontent = FileController.readFile("templates/pom.template");
         str = pomcontent;
         for i, j in dict.items():
             str = str.replace(i, j);
@@ -36,7 +36,7 @@ class FileGenerator():
     
     @staticmethod    
     def readDependencyFile():
-        lines = FileController.readFileAndReturnLines("dependencies.txt");
+        lines = FileController.readFileAndReturnLines("local/dependencies.txt");
         dependencyString = "";
         for e in lines [1:]:
             dependencyString += "<dependency>\n"+Utils.tabs(3);
