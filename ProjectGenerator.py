@@ -1,3 +1,12 @@
+#####################################################
+# Maven Project Builder
+# File: ProjectGenerator.py
+# Author: raheal
+# Version: 1
+#
+#####################################################
+
+
 import os;
 import sys;
 from FileGenerator import FileGenerator;

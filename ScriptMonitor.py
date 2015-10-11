@@ -1,3 +1,11 @@
+#####################################################
+# Maven Project Builder
+# File: ScriptMonitor.py
+# Author: raheal
+# Version: 1
+#
+#####################################################
+
 class ScriptMonitor:
         
     @staticmethod    

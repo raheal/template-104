@@ -1,3 +1,12 @@
+#####################################################
+# Maven Project Builder
+# File: run.py
+# Author: raheal
+# Version: 1
+#
+#####################################################
+
+
 import sys;
 from ScriptMonitor import ScriptMonitor;
 from ProjectGenerator import ProjectGenerator;

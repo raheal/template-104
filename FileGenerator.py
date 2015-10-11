@@ -1,3 +1,12 @@
+#####################################################
+# Maven Project Builder
+# File: FileGenerator.py
+# Author: raheal
+# Version: 1
+#
+#####################################################
+
+
 from FileController import FileController;
 from Utils import Utils;
 from ScriptMonitor import ScriptMonitor;
